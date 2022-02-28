@@ -229,11 +229,16 @@ class CUTModel(BaseModel):
         The option 'direction' can be used to swap domain A and domain B.
         """
         AtoB = self.opt.direction == 'AtoB'
+        #masked A (not used)
         self.real_A_m = input['A' if AtoB else 'B'].to(self.device)
         self.real_B_m = input['B' if AtoB else 'A'].to(self.device)
+        #paired B masked (used)
         self.real_B1_m = input['B1'].to(self.device)
+        #unmasked A version
         self.real_A = input['AO' if AtoB else 'BO'].to(self.device)
+        #paired unmasked B versions
         self.real_B_op = input['BO' if AtoB else 'AO'].to(self.device)
+        #unpaired and randmly selected B from the sunny dataset
         self.real_B = input['BU'].to(self.device)
         self.image_paths = input['A_paths' if AtoB else 'B_paths']
     def forward(self):
@@ -307,11 +312,12 @@ class CUTModel(BaseModel):
             #self.loss_NCE_Y = self.calculate_NCE_loss(self.real_B, self.idt_B)
             loss_NCE_both = self.loss_NCE +self.loss_NCE_P
         else:
+            #NCE loss for the defined functions
             loss_NCE_both = self.loss_NCE
 
         self.loss_G = self.loss_G_GAN+loss_NCE_both
 
-        self.loss_G_L1_B = self.criterionL1(mask_fake,self.real_B1_m) *10
+        self.loss_G_L1_B = self.criterionL1(mask_fake,self.real_B1_m)
 
         # VGG feature matching loss
         #snow_seg=torch.argmax(self.seg(self.real_A.detach().).squeeze(), dim=0)
@@ -320,7 +326,8 @@ class CUTModel(BaseModel):
         #self.loss_G_L1_obj=self.criterionL1(self.real_A, self.idt_B) *10
 
         #self.loss_G_VGG_B = self.criterionVGG(self.real_B1_m, self.fake_B_m) * 10
-        self.loss_G=self.loss_G+(self.loss_G_L1_B)*0.5
+        #L1 loss
+        self.loss_G=self.loss_G+(self.loss_G_L1_B)
 
         return self.loss_G
 
