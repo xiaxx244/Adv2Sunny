@@ -30,12 +30,12 @@ cd CAPIT
     ```
   
   
-- Train the CUT model:
+- Train the CAPIT model:
 ```bash
 python train.py --dataroot  mask_data/ --name weather_cutoriloc --CUT_mode CUT --display_id 0 --preprocess scale_width --load_size 512
 
 ```
-- Test the CUT model:
+- Test the CAPIT model:
 ```bash
 python test.py --dataroot mask_data/  --name weather_nightcutrank --CUT_mode CUT --preprocess scale_width --load_size 512
 ```
