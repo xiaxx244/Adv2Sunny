@@ -42,7 +42,7 @@ python train.py --dataroot  mask_data/ --name weather_cutoriloc --CUT_mode CUT -
 python test.py --dataroot mask_data/  --name weather_nightcutrank --CUT_mode CUT --preprocess scale_width --load_size 512
 ```
 ## Semantic Segmentation Results of Translated Image 
-<img src='vis2.png' align="right" width=960>
+<img src='vis2.jpg' align="right" width=960>
 
 ## Acknowledgements
 - https://github.com/taesungp/contrastive-unpaired-translation
