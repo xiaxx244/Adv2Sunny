@@ -1,4 +1,5 @@
 # Coarsely-Aligned Paired Image Translation (CAPIT)
+<img src='vis.png' align="right" width=960>
 
 We provide our PyTorch implementation of Coarsely-Aligned Paired Image Translation (CAPIT) which has been accepted to ICRA 2023.
 
@@ -40,6 +41,8 @@ python train.py --dataroot  mask_data/ --name weather_cutoriloc --CUT_mode CUT -
 ```bash
 python test.py --dataroot mask_data/  --name weather_nightcutrank --CUT_mode CUT --preprocess scale_width --load_size 512
 ```
+## Semantic Segmentation Results of Translated Image 
+<img src='vis2.png' align="right" width=960>
 
 ## Acknowledgements
 - https://github.com/taesungp/contrastive-unpaired-translation
