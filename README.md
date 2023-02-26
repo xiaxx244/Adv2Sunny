@@ -26,7 +26,7 @@ cd CAPIT
   - Then, mask the corasely aligned images by using [Detectron2](https://github.com/facebookresearch/detectron2) and store the mask results in two folders called tmp_A and tmp_B respectively (already provide a file calld mask_img.py which can help mask the image)
   - Finally store the train, test split of the masked version of corasely aligned dataset in a folder under CAPIT called mask_data by using the following command:
     ```bash
-    python datasets/combine_A_and_B.py --fold_A tmp_A --fold_B tmp_B --fold_AB mask_data
+    python datasets/combine_A_and_B.py --fold_A tmp_data/A --fold_B tmp_data/B --fold_AB mask_data
     ```
   
   
