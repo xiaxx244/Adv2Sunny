@@ -130,5 +130,5 @@ for i in range(len(path1)):
     #print(name1.split("_")[-1]).split("_")[]
 
 
-    cv2.imwrite("tmp_A/"+name1,im)
-    cv2.imwrite("tmp_B/"+name2,im2)
+    cv2.imwrite("tmp_data/A/"+name1,im)
+    cv2.imwrite("tmp_data/B/"+name2,im2)
