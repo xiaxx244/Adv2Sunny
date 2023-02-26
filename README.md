@@ -11,7 +11,7 @@ We provide our PyTorch implementation of Coarsely-Aligned Paired Image Translati
 
 - Clone this repo:
 ```bash
-git clone https://github.com/taesungp/contrastive-unpaired-translation CUT
+git clone https://github.com/xiaxx244/Adv2Sunny CUT
 cd CAPIT
 ```
 
@@ -20,6 +20,8 @@ cd CAPIT
   For pip users, please type the command `pip install -r requirements.txt`.
 
   For Conda users,  you can create a new Conda environment using `conda env create -f environment.yml`.
+
+- Prepare the dataset
 
 - Train the CUT model:
 ```bash
