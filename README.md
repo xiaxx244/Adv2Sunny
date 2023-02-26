@@ -22,15 +22,19 @@ cd CAPIT
   For Conda users,  you can create a new Conda environment using `conda env create -f environment.yml`.
 
 - Prepare the dataset
-
+  First, find or create a coarsely aligned dataset in the path CAPIT/paired/
+  Then, mask the corasely aligned images by using [Detectron2](https://github.com/facebookresearch/detectron2).
+  Finally store the masked version of corasely aligned dataset in a folder under CAPIT called mask_data
+  
+  
 - Train the CUT model:
 ```bash
-python train.py --dataroot ../../mask_data/weather6/ --name weather_cutoriloc --CUT_mode CUT --display_id 0 --preprocess scale_width --load_size 512
+python train.py --dataroot  mask_data/ --name weather_cutoriloc --CUT_mode CUT --display_id 0 --preprocess scale_width --load_size 512
 
 ```
 - Test the CUT model:
 ```bash
-python test.py --dataroot ../mask_data/weather7/ --name weather_nightcutrank --CUT_mode CUT --preprocess scale_width --load_size 512
+python test.py --dataroot mask_data/  --name weather_nightcutrank --CUT_mode CUT --preprocess scale_width --load_size 512
 ```
 
 ## Acknowledgements
