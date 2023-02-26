@@ -55,10 +55,10 @@ class UnalignedDataset(BaseDataset):
         else:   # randomize the index for domain B to avoid fixed pairs.
             index_B = random.randint(0, self.B_size - 1)
         B_path = self.B_paths[index_B]
-        A_path_original="../../12-09-2021/"+"1209_"+A_path.split("/")[-1]
-        B_path_original="../../12-12-2021/"+"1212_"+A_path.split("/")[-1].split("_")[-1]
+        A_path_original="../paired_A/"+A_path.split("/")[-1]
+        B_path_original="../paired_B/"+A_path.split("/")[-1].split("_")[-1]
         #B_path_original1="../../original/12-13-2021/"+"1212_"+A_path.split("/")[-1].split("_")[-1]
-        B_path_unpair="../../12-12-2021/"+B_path.split("/")[-1]
+        B_path_unpair="../paired_B/"+B_path.split("/")[-1]
         A_img = Image.open(A_path).convert('RGB')
         B_img = Image.open(B_path).convert('RGB')
         width,height = A_img.size
