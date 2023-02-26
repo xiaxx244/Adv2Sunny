@@ -44,6 +44,7 @@ python test.py --dataroot mask_data/  --name weather_nightcutrank --CUT_mode CUT
 ## Semantic Segmentation Results of Translated Images 
 <img src='vis2.png' align="right" width=960>
 
+
 ## Acknowledgements
 - https://github.com/taesungp/contrastive-unpaired-translation
 - https://github.com/junyanz/pytorch-CycleGAN-and-pix2pix
