@@ -41,7 +41,7 @@ python train.py --dataroot  mask_data/ --name weather_cutoriloc --CUT_mode CUT -
 ```bash
 python test.py --dataroot mask_data/  --name weather_nightcutrank --CUT_mode CUT --preprocess scale_width --load_size 512
 ```
-## Semantic Segmentation Results of Translated Image 
+## Semantic Segmentation Results of Translated Images 
 <img src='vis2.jpg' align="right" width=960>
 
 ## Acknowledgements
